@@ -53,6 +53,16 @@ public class SimpleHashtable {
         }
         Employee employee = hashtable[hashedKey].employee;
         hashtable[hashedKey] = null;
+
+        // Rehash the hash table on removal
+        StoredEmployee[] oldhashtable = hashtable;
+        hashtable = new StoredEmployee[oldhashtable.length];
+        for(int i=0;i<oldhashtable.length;i++){
+            if(oldhashtable[i] != null)
+            {
+                put(oldhashtable[i].key,oldhashtable[i].employee);
+            }
+        }
         return employee;
     }
 
