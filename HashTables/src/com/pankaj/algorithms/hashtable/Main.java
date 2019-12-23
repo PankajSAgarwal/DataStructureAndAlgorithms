@@ -19,5 +19,10 @@ public class Main {
         ht.printHashTable();
         System.out.println("Retrieving key Wilson:"+ht.get("Wilson"));
         System.out.println("Retrieving key Smith:" + ht.get("Smith"));
+
+        ht.remove("Wilson");
+        ht.remove("Jones");
+        ht.printHashTable();
+        System.out.println("Retrieving key Smith:" + ht.get("Smith"));
     }
 }
